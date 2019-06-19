@@ -1,7 +1,9 @@
-import { injectable } from 'inversify';
+import { injectable } from "inversify";
+import { IUser } from "../entities";
 
 @injectable()
 export abstract class IUserRepository {
-    abstract findOne(query: String): Promise<any>;
-    abstract findAll(): Promise<any[]>;
+  abstract findOne(query: any): Promise<IUser>;
+  abstract findAll(): Promise<IUser[]>;
+  abstract create(user: IUser): Promise<IUser>;
 }

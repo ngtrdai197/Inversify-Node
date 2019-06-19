@@ -1,20 +1,18 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
         "target": "es5",
-        "lib": [
-            "es6",
-            "dom"
-        ],
-        "noImplicitAny": false,
-        "sourceMap": false,
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
+        "lib": ["es6", "dom"],
+        "types": ["reflect-metadata"],
+        "module": "commonjs",
         "moduleResolution": "node",
-        "noUnusedLocals": true
-    },
-    "compileOnSave": false,
-    "exclude": [
-      "node_modules"
-    ]
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "noImplicitAny": true,
+        "preserveConstEnums": true,
+        "suppressImplicitAnyIndexErrors": false,
+        "noResolve": false,
+        "noUnusedParameters": false,
+        "noUnusedLocals": true,
+        "strictNullChecks": true
+    }
 }
