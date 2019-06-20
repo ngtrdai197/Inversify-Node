@@ -19,4 +19,12 @@ export class UserService implements IUserService {
     findOne = async (query: any): Promise<IUser> => {
         return this.userRepository.findOne(query);
     }
+
+    update = async (user: IUser): Promise<IUser> => {
+        return await this.userRepository.update(user);
+    };
+
+    delete = async (id: string): Promise<any> => {
+        return await this.userRepository.delete(id);
+    }
 }

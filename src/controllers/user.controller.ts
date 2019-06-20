@@ -1,6 +1,6 @@
-import { controller, httpGet, httpPost } from "inversify-express-utils";
+import { controller, httpGet, httpPost, httpPut, httpDelete } from "inversify-express-utils";
 import { inject } from "inversify";
-import { Request, Response } from "express";
+import { Request } from "express";
 import { SERVTYPES } from "../common";
 import { IUser } from "../entities";
 import { UserService } from "../services";
@@ -12,7 +12,7 @@ export class UserController {
   ) { }
 
   @httpGet("/")
-  public async getUsers(): Promise<IUser[]> {
+  public async findAll(): Promise<IUser[]> {
     try {
       return await this.userService.findAll();
     } catch (error) {
@@ -21,7 +21,7 @@ export class UserController {
   }
 
   @httpGet("/:id")
-  public async getUser(req: Request, res: Response): Promise<IUser> {
+  public async findOne(req: Request): Promise<IUser> {
     try {
       const query = { _id: req.params.id };
       return await this.userService.findOne(query);
@@ -31,9 +31,27 @@ export class UserController {
   }
 
   @httpPost("/")
-  public async createUser(req: Request): Promise<IUser> {
+  public async create(req: Request): Promise<IUser> {
     try {
       return await this.userService.create(req.body);
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  @httpPut("/")
+  public async update(req: Request): Promise<IUser> {
+    try {
+      return await this.userService.update(req.body);
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  @httpDelete("/:id")
+  public async delete(req: Request): Promise<any> {
+    try {
+      return await this.userService.delete(req.params.id);
     } catch (error) {
       throw error;
     }
