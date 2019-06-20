@@ -1,9 +1,9 @@
 import "reflect-metadata";
 import { constants } from "./common";
-import "./controllers/user.controller";
+import "./controllers";
 import { connectDatabase } from "./config";
 import * as express from "express";
-import { inversifyExpressServer } from "../bootstrap";
+import { inversifyExpressServer } from "./bootstrap";
 const app = express();
 
 // start the server

@@ -1,11 +1,11 @@
 {
   "name": "research-inversify",
   "version": "1.0.0",
-  "main": "dist/main.js",
+  "main": "dist/server.js",
   "author": "Nguyen Dai",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon src/main.ts",
+    "start": "nodemon src/server.ts",
     "build": "tsc",
     "test": "jest"
   },
