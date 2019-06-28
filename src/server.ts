@@ -8,7 +8,8 @@ const app = express();
 
 // start the server
 inversifyExpressServer(app);
+
 app.listen(constants.PORT, () => {
   connectDatabase();
-  console.log(`Server started on port ${constants.PORT} :)`);
+  console.log(`Server started on port ${constants.PORT}`);
 });
